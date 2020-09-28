@@ -1,18 +1,19 @@
-# containers
+# OpenSSL
 
-A collection of Dockerfiles to produce  containers that are useful for 
-exploring computer security. Each container is stored in it's own 
-directory and can be built locally. 
-
-## OpenSSL 
-
-Contains a Dockerfile to create an Ubuntu container with OpenSSL installed. The
+Contains a `Dockerfile` to create an Ubuntu container with OpenSSL installed. The
 OpenSSL container is used to explore cryptographic concepts using the OpenSSL
 cli. 
 
-### RSA 
+* `docker build . -t openssl`
+* `docker run -ti openssl`
+* `openssl version`
+``` 
+OpenSSL 1.1.1f  31 Mar 2020
+```
 
-#### Generate an RSA key pair 
+# RSA 
+
+## Generate an RSA key pair 
 
 Generate an RSA keypair in pem formart with no password 
 
@@ -50,7 +51,7 @@ LRg6AkcesJeTmbcwBvBpmA3cqPgKO8tG67SZULG0lvv3rokG7rzr
 -----END RSA PRIVATE KEY-----
 ```
 
-#### Examine the generate keypair file 
+## Examine the generate keypair file 
 
 You can examine the contents of the file using the command 
 `openssl rsa -noout -text -inform PEM -in rsa-keypair.pem`
@@ -148,7 +149,7 @@ coefficient:
     96:fb:f7:ae:89:06:ee:bc:eb
 ```
 
-#### Exporting the public key file
+## Exporting the public key file
 
 The public key can be exported out of the keypair file 
 using the command `openssl rsa -in rsa-keypair.pem -pubout -out rsa-pubkey.pem` 
@@ -166,7 +167,7 @@ BQIDAQAB
 -----END PUBLIC KEY-----
 ```
 
-#### Inspecting the public key file 
+## Inspecting the public key file 
 
 You can inspect the public key file with the command 
 `openssl rsa -noout -text -inform PEM -in ras-pubkey.pem -pubin` 
@@ -196,7 +197,7 @@ Modulus:
 Exponent: 65537 (0x10001)
 ```
 
-#### Generate a Password Protected Key File
+## Generate a Password Protected Key File
 
 The PEM file can be encrypted using AES/CBC using a password.
 with the command 
