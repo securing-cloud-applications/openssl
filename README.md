@@ -51,7 +51,7 @@ LRg6AkcesJeTmbcwBvBpmA3cqPgKO8tG67SZULG0lvv3rokG7rzr
 -----END RSA PRIVATE KEY-----
 ```
 
-## Examine the generate keypair file 
+## Examine the generated keypair file 
 
 You can examine the contents of the file using the command 
 `openssl rsa -noout -text -inform PEM -in rsa-keypair.pem`
