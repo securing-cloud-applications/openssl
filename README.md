@@ -11,7 +11,12 @@ cli.
 OpenSSL 1.1.1f  31 Mar 2020
 ```
 
-# RSA 
+# Generating a Random Key 
+
+Using the openssl command line you can generate 256-bit encoded as  16 bytes of hex using the 
+command `openssl rand -hex 16`
+ 
+# RSA
 
 ## Generate an RSA key pair 
 
