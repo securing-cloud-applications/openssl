@@ -8,7 +8,7 @@ cli.
 * `docker run -ti openssl`
 * `openssl version`
 ``` 
-OpenSSL 1.1.1f  31 Mar 2020
+OpenSSL 3.0.2 15 Mar 2022 (Library: OpenSSL 3.0.2 15 Mar 2022)
 ```
 
 # Generating a Random Key 
