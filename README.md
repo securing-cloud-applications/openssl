@@ -16,6 +16,222 @@ OpenSSL 3.0.2 15 Mar 2022 (Library: OpenSSL 3.0.2 15 Mar 2022)
 Using the openssl command line you can generate 256-bit encoded as  16 bytes of hex using the 
 command `openssl rand -hex 16`
  
+# TLS Connection debugging 
+
+You can debug TLS connection issues using the `s_client` subcommand. 
+
+## Download a certificate chain 
+
+For example, `echo | openssl s_client -connect github.com` produces a bunch 
+of debug output on the certificate and connection parameters 
+
+```
+CONNECTED(00000003)
+---
+Certificate chain
+ 0 s:C = US, ST = California, L = San Francisco, O = "GitHub, Inc.", CN = github.com
+   i:C = US, O = DigiCert Inc, CN = DigiCert TLS Hybrid ECC SHA384 2020 CA1
+   a:PKEY: id-ecPublicKey, 256 (bit); sigalg: ecdsa-with-SHA384
+   v:NotBefore: Mar 15 00:00:00 2022 GMT; NotAfter: Mar 15 23:59:59 2023 GMT
+ 1 s:C = US, O = DigiCert Inc, CN = DigiCert TLS Hybrid ECC SHA384 2020 CA1
+   i:C = US, O = DigiCert Inc, OU = www.digicert.com, CN = DigiCert Global Root CA
+   a:PKEY: id-ecPublicKey, 384 (bit); sigalg: RSA-SHA384
+   v:NotBefore: Apr 14 00:00:00 2021 GMT; NotAfter: Apr 13 23:59:59 2031 GMT
+---
+Server certificate
+-----BEGIN CERTIFICATE-----
+MIIFajCCBPCgAwIBAgIQBRiaVOvox+kD4KsNklVF3jAKBggqhkjOPQQDAzBWMQsw
+CQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMTAwLgYDVQQDEydEaWdp
+Q2VydCBUTFMgSHlicmlkIEVDQyBTSEEzODQgMjAyMCBDQTEwHhcNMjIwMzE1MDAw
+MDAwWhcNMjMwMzE1MjM1OTU5WjBmMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2Fs
+aWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZyYW5jaXNjbzEVMBMGA1UEChMMR2l0SHVi
+LCBJbmMuMRMwEQYDVQQDEwpnaXRodWIuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0D
+AQcDQgAESrCTcYUh7GI/y3TARsjnANwnSjJLitVRgwgRI1JlxZ1kdZQQn5ltP3v7
+KTtYuDdUeEu3PRx3fpDdu2cjMlyA0aOCA44wggOKMB8GA1UdIwQYMBaAFAq8CCkX
+jKU5bXoOzjPHLrPt+8N6MB0GA1UdDgQWBBR4qnLGcWloFLVZsZ6LbitAh0I7HjAl
+BgNVHREEHjAcggpnaXRodWIuY29tgg53d3cuZ2l0aHViLmNvbTAOBgNVHQ8BAf8E
+BAMCB4AwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMIGbBgNVHR8EgZMw
+gZAwRqBEoEKGQGh0dHA6Ly9jcmwzLmRpZ2ljZXJ0LmNvbS9EaWdpQ2VydFRMU0h5
+YnJpZEVDQ1NIQTM4NDIwMjBDQTEtMS5jcmwwRqBEoEKGQGh0dHA6Ly9jcmw0LmRp
+Z2ljZXJ0LmNvbS9EaWdpQ2VydFRMU0h5YnJpZEVDQ1NIQTM4NDIwMjBDQTEtMS5j
+cmwwPgYDVR0gBDcwNTAzBgZngQwBAgIwKTAnBggrBgEFBQcCARYbaHR0cDovL3d3
+dy5kaWdpY2VydC5jb20vQ1BTMIGFBggrBgEFBQcBAQR5MHcwJAYIKwYBBQUHMAGG
+GGh0dHA6Ly9vY3NwLmRpZ2ljZXJ0LmNvbTBPBggrBgEFBQcwAoZDaHR0cDovL2Nh
+Y2VydHMuZGlnaWNlcnQuY29tL0RpZ2lDZXJ0VExTSHlicmlkRUNDU0hBMzg0MjAy
+MENBMS0xLmNydDAJBgNVHRMEAjAAMIIBfwYKKwYBBAHWeQIEAgSCAW8EggFrAWkA
+dgCt9776fP8QyIudPZwePhhqtGcpXc+xDCTKhYY069yCigAAAX+Oi8SRAAAEAwBH
+MEUCIAR9cNnvYkZeKs9JElpeXwztYB2yLhtc8bB0rY2ke98nAiEAjiML8HZ7aeVE
+P/DkUltwIS4c73VVrG9JguoRrII7gWMAdwA1zxkbv7FsV78PrUxtQsu7ticgJlHq
+P+Eq76gDwzvWTAAAAX+Oi8R7AAAEAwBIMEYCIQDNckqvBhup7GpANMf0WPueytL8
+u/PBaIAObzNZeNMpOgIhAMjfEtE6AJ2fTjYCFh/BNVKk1mkTwBTavJlGmWomQyaB
+AHYAs3N3B+GEUPhjhtYFqdwRCUp5LbFnDAuH3PADDnk2pZoAAAF/jovErAAABAMA
+RzBFAiEA9Uj5Ed/XjQpj/MxQRQjzG0UFQLmgWlc73nnt3CJ7vskCICqHfBKlDz7R
+EHdV5Vk8bLMBW1Q6S7Ga2SbFuoVXs6zFMAoGCCqGSM49BAMDA2gAMGUCMCiVhqft
+7L/stBmv1XqSRNfE/jG/AqKIbmjGTocNbuQ7kt1Cs7kRg+b3b3C9Ipu5FQIxAM7c
+tGKrYDGt0pH8iF6rzbp9Q4HQXMZXkNxg+brjWxnaOVGTDNwNH7048+s/hT9bUQ==
+-----END CERTIFICATE-----
+subject=C = US, ST = California, L = San Francisco, O = "GitHub, Inc.", CN = github.com
+issuer=C = US, O = DigiCert Inc, CN = DigiCert TLS Hybrid ECC SHA384 2020 CA1
+---
+No client certificate CA names sent
+Peer signing digest: SHA256
+Peer signature type: ECDSA
+Server Temp Key: X25519, 253 bits
+---
+SSL handshake has read 2805 bytes and written 376 bytes
+Verification: OK
+---
+New, TLSv1.3, Cipher is TLS_AES_128_GCM_SHA256
+Server public key is 256 bit
+Secure Renegotiation IS NOT supported
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+Early data was not sent
+Verify return code: 0 (ok)
+---
+```
+
+## Extract certificate it PEM format
+
+To get the certificate from a website use a command like the one below 
+`echo | openssl s_client -servername github.com -connect github.com:443 2>/dev/null | openssl x509` 
+produces 
+
+```
+-----BEGIN CERTIFICATE-----
+MIIFajCCBPCgAwIBAgIQBRiaVOvox+kD4KsNklVF3jAKBggqhkjOPQQDAzBWMQsw
+CQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMTAwLgYDVQQDEydEaWdp
+Q2VydCBUTFMgSHlicmlkIEVDQyBTSEEzODQgMjAyMCBDQTEwHhcNMjIwMzE1MDAw
+MDAwWhcNMjMwMzE1MjM1OTU5WjBmMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2Fs
+aWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZyYW5jaXNjbzEVMBMGA1UEChMMR2l0SHVi
+LCBJbmMuMRMwEQYDVQQDEwpnaXRodWIuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0D
+AQcDQgAESrCTcYUh7GI/y3TARsjnANwnSjJLitVRgwgRI1JlxZ1kdZQQn5ltP3v7
+KTtYuDdUeEu3PRx3fpDdu2cjMlyA0aOCA44wggOKMB8GA1UdIwQYMBaAFAq8CCkX
+jKU5bXoOzjPHLrPt+8N6MB0GA1UdDgQWBBR4qnLGcWloFLVZsZ6LbitAh0I7HjAl
+BgNVHREEHjAcggpnaXRodWIuY29tgg53d3cuZ2l0aHViLmNvbTAOBgNVHQ8BAf8E
+BAMCB4AwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMIGbBgNVHR8EgZMw
+gZAwRqBEoEKGQGh0dHA6Ly9jcmwzLmRpZ2ljZXJ0LmNvbS9EaWdpQ2VydFRMU0h5
+YnJpZEVDQ1NIQTM4NDIwMjBDQTEtMS5jcmwwRqBEoEKGQGh0dHA6Ly9jcmw0LmRp
+Z2ljZXJ0LmNvbS9EaWdpQ2VydFRMU0h5YnJpZEVDQ1NIQTM4NDIwMjBDQTEtMS5j
+cmwwPgYDVR0gBDcwNTAzBgZngQwBAgIwKTAnBggrBgEFBQcCARYbaHR0cDovL3d3
+dy5kaWdpY2VydC5jb20vQ1BTMIGFBggrBgEFBQcBAQR5MHcwJAYIKwYBBQUHMAGG
+GGh0dHA6Ly9vY3NwLmRpZ2ljZXJ0LmNvbTBPBggrBgEFBQcwAoZDaHR0cDovL2Nh
+Y2VydHMuZGlnaWNlcnQuY29tL0RpZ2lDZXJ0VExTSHlicmlkRUNDU0hBMzg0MjAy
+MENBMS0xLmNydDAJBgNVHRMEAjAAMIIBfwYKKwYBBAHWeQIEAgSCAW8EggFrAWkA
+dgCt9776fP8QyIudPZwePhhqtGcpXc+xDCTKhYY069yCigAAAX+Oi8SRAAAEAwBH
+MEUCIAR9cNnvYkZeKs9JElpeXwztYB2yLhtc8bB0rY2ke98nAiEAjiML8HZ7aeVE
+P/DkUltwIS4c73VVrG9JguoRrII7gWMAdwA1zxkbv7FsV78PrUxtQsu7ticgJlHq
+P+Eq76gDwzvWTAAAAX+Oi8R7AAAEAwBIMEYCIQDNckqvBhup7GpANMf0WPueytL8
+u/PBaIAObzNZeNMpOgIhAMjfEtE6AJ2fTjYCFh/BNVKk1mkTwBTavJlGmWomQyaB
+AHYAs3N3B+GEUPhjhtYFqdwRCUp5LbFnDAuH3PADDnk2pZoAAAF/jovErAAABAMA
+RzBFAiEA9Uj5Ed/XjQpj/MxQRQjzG0UFQLmgWlc73nnt3CJ7vskCICqHfBKlDz7R
+EHdV5Vk8bLMBW1Q6S7Ga2SbFuoVXs6zFMAoGCCqGSM49BAMDA2gAMGUCMCiVhqft
+7L/stBmv1XqSRNfE/jG/AqKIbmjGTocNbuQ7kt1Cs7kRg+b3b3C9Ipu5FQIxAM7c
+tGKrYDGt0pH8iF6rzbp9Q4HQXMZXkNxg+brjWxnaOVGTDNwNH7048+s/hT9bUQ==
+-----END CERTIFICATE-----
+```
+
+## Print certificate details in text format 
+Use the command `echo | openssl s_client -servername github.com -connect github.com:443 2>/dev/null | openssl x509 -noout -text` 
+to printout a text summary of what is in the certificate produces 
+
+```
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            05:18:9a:54:eb:e8:c7:e9:03:e0:ab:0d:92:55:45:de
+        Signature Algorithm: ecdsa-with-SHA384
+        Issuer: C = US, O = DigiCert Inc, CN = DigiCert TLS Hybrid ECC SHA384 2020 CA1
+        Validity
+            Not Before: Mar 15 00:00:00 2022 GMT
+            Not After : Mar 15 23:59:59 2023 GMT
+        Subject: C = US, ST = California, L = San Francisco, O = "GitHub, Inc.", CN = github.com
+        Subject Public Key Info:
+            Public Key Algorithm: id-ecPublicKey
+                Public-Key: (256 bit)
+                pub:
+                    04:4a:b0:93:71:85:21:ec:62:3f:cb:74:c0:46:c8:
+                    e7:00:dc:27:4a:32:4b:8a:d5:51:83:08:11:23:52:
+                    65:c5:9d:64:75:94:10:9f:99:6d:3f:7b:fb:29:3b:
+                    58:b8:37:54:78:4b:b7:3d:1c:77:7e:90:dd:bb:67:
+                    23:32:5c:80:d1
+                ASN1 OID: prime256v1
+                NIST CURVE: P-256
+        X509v3 extensions:
+            X509v3 Authority Key Identifier: 
+                0A:BC:08:29:17:8C:A5:39:6D:7A:0E:CE:33:C7:2E:B3:ED:FB:C3:7A
+            X509v3 Subject Key Identifier: 
+                78:AA:72:C6:71:69:68:14:B5:59:B1:9E:8B:6E:2B:40:87:42:3B:1E
+            X509v3 Subject Alternative Name: 
+                DNS:github.com, DNS:www.github.com
+            X509v3 Key Usage: critical
+                Digital Signature
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication, TLS Web Client Authentication
+            X509v3 CRL Distribution Points: 
+                Full Name:
+                  URI:http://crl3.digicert.com/DigiCertTLSHybridECCSHA3842020CA1-1.crl
+                Full Name:
+                  URI:http://crl4.digicert.com/DigiCertTLSHybridECCSHA3842020CA1-1.crl
+            X509v3 Certificate Policies: 
+                Policy: 2.23.140.1.2.2
+                  CPS: http://www.digicert.com/CPS
+            Authority Information Access: 
+                OCSP - URI:http://ocsp.digicert.com
+                CA Issuers - URI:http://cacerts.digicert.com/DigiCertTLSHybridECCSHA3842020CA1-1.crt
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            CT Precertificate SCTs: 
+                Signed Certificate Timestamp:
+                    Version   : v1 (0x0)
+                    Log ID    : AD:F7:BE:FA:7C:FF:10:C8:8B:9D:3D:9C:1E:3E:18:6A:
+                                B4:67:29:5D:CF:B1:0C:24:CA:85:86:34:EB:DC:82:8A
+                    Timestamp : Mar 15 17:06:38.865 2022 GMT
+                    Extensions: none
+                    Signature : ecdsa-with-SHA256
+                                30:45:02:20:04:7D:70:D9:EF:62:46:5E:2A:CF:49:12:
+                                5A:5E:5F:0C:ED:60:1D:B2:2E:1B:5C:F1:B0:74:AD:8D:
+                                A4:7B:DF:27:02:21:00:8E:23:0B:F0:76:7B:69:E5:44:
+                                3F:F0:E4:52:5B:70:21:2E:1C:EF:75:55:AC:6F:49:82:
+                                EA:11:AC:82:3B:81:63
+                Signed Certificate Timestamp:
+                    Version   : v1 (0x0)
+                    Log ID    : 35:CF:19:1B:BF:B1:6C:57:BF:0F:AD:4C:6D:42:CB:BB:
+                                B6:27:20:26:51:EA:3F:E1:2A:EF:A8:03:C3:3B:D6:4C
+                    Timestamp : Mar 15 17:06:38.843 2022 GMT
+                    Extensions: none
+                    Signature : ecdsa-with-SHA256
+                                30:46:02:21:00:CD:72:4A:AF:06:1B:A9:EC:6A:40:34:
+                                C7:F4:58:FB:9E:CA:D2:FC:BB:F3:C1:68:80:0E:6F:33:
+                                59:78:D3:29:3A:02:21:00:C8:DF:12:D1:3A:00:9D:9F:
+                                4E:36:02:16:1F:C1:35:52:A4:D6:69:13:C0:14:DA:BC:
+                                99:46:99:6A:26:43:26:81
+                Signed Certificate Timestamp:
+                    Version   : v1 (0x0)
+                    Log ID    : B3:73:77:07:E1:84:50:F8:63:86:D6:05:A9:DC:11:09:
+                                4A:79:2D:B1:67:0C:0B:87:DC:F0:03:0E:79:36:A5:9A
+                    Timestamp : Mar 15 17:06:38.892 2022 GMT
+                    Extensions: none
+                    Signature : ecdsa-with-SHA256
+                                30:45:02:21:00:F5:48:F9:11:DF:D7:8D:0A:63:FC:CC:
+                                50:45:08:F3:1B:45:05:40:B9:A0:5A:57:3B:DE:79:ED:
+                                DC:22:7B:BE:C9:02:20:2A:87:7C:12:A5:0F:3E:D1:10:
+                                77:55:E5:59:3C:6C:B3:01:5B:54:3A:4B:B1:9A:D9:26:
+                                C5:BA:85:57:B3:AC:C5
+    Signature Algorithm: ecdsa-with-SHA384
+    Signature Value:
+        30:65:02:30:28:95:86:a7:ed:ec:bf:ec:b4:19:af:d5:7a:92:
+        44:d7:c4:fe:31:bf:02:a2:88:6e:68:c6:4e:87:0d:6e:e4:3b:
+        92:dd:42:b3:b9:11:83:e6:f7:6f:70:bd:22:9b:b9:15:02:31:
+        00:ce:dc:b4:62:ab:60:31:ad:d2:91:fc:88:5e:ab:cd:ba:7d:
+        43:81:d0:5c:c6:57:90:dc:60:f9:ba:e3:5b:19:da:39:51:93:
+        0c:dc:0d:1f:bd:38:f3:eb:3f:85:3f:5b:51
+```
+
+
+
 # RSA
 
 ## Generate an RSA key pair 
