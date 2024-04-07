@@ -1,0 +1,91 @@
+Certificate:
+  Data:
+    Version: 3 (0x2)
+    Serial Number:
+      0c:d0:a8:be:c6:32:cf:e6:45:ec:a0:a9:b0:84:fb:1c
+    Signature Algorithm: ecdsa-with-SHA384
+    Issuer: C = US, O = DigiCert Inc, CN = DigiCert TLS Hybrid ECC SHA384 2020 CA1
+    Validity
+      Not Before: Feb 14 00:00:00 2023 GMT
+      Not After : Mar 14 23:59:59 2024 GMT
+    Subject: C = US, ST = California, L = San Francisco, O = "GitHub, Inc.", CN = github.com
+    Subject Public Key Info:
+      Public Key Algorithm: id-ecPublicKey
+        Public-Key: (256 bit)
+        pub:
+          04:a3:a4:03:46:03:df:46:51:56:cb:c9:39:ab:22:
+          cd:e7:6c:59:96:7a:93:a0:fb:b9:40:1c:90:32:88:
+          36:c6:09:76:9c:50:f5:55:f7:76:5e:68:20:9c:ee:
+          22:ed:83:0c:15:30:10:41:44:5e:32:ac:90:a1:d5:
+          aa:f2:e5:43:b3
+        ASN1 OID: prime256v1
+        NIST CURVE: P-256
+    X509v3 extensions:
+      X509v3 Authority Key Identifier: 
+        0A:BC:08:29:17:8C:A5:39:6D:7A:0E:CE:33:C7:2E:B3:ED:FB:C3:7A
+      X509v3 Subject Key Identifier: 
+        C7:07:27:78:85:F2:9D:33:C9:4C:5E:56:7D:5C:D6:8E:72:67:EB:DE
+      X509v3 Subject Alternative Name: 
+        DNS:github.com, DNS:www.github.com
+      X509v3 Key Usage: critical
+        Digital Signature
+      X509v3 Extended Key Usage: 
+        TLS Web Server Authentication, TLS Web Client Authentication
+      X509v3 CRL Distribution Points: 
+        Full Name:
+          URI:http://crl3.digicert.com/DigiCertTLSHybridECCSHA3842020CA1-1.crl
+        Full Name:
+          URI:http://crl4.digicert.com/DigiCertTLSHybridECCSHA3842020CA1-1.crl
+      X509v3 Certificate Policies: 
+        Policy: 2.23.140.1.2.2
+          CPS: http://www.digicert.com/CPS
+      Authority Information Access: 
+        OCSP - URI:http://ocsp.digicert.com
+        CA Issuers - URI:http://cacerts.digicert.com/DigiCertTLSHybridECCSHA3842020CA1-1.crt
+      X509v3 Basic Constraints: 
+        CA:FALSE
+      CT Precertificate SCTs: 
+        Signed Certificate Timestamp:
+          Version   : v1 (0x0)
+          Log ID    : EE:CD:D0:64:D5:DB:1A:CE:C5:5C:B7:9D:B4:CD:13:A2:
+                32:87:46:7C:BC:EC:DE:C3:51:48:59:46:71:1F:B5:9B
+          Timestamp : Feb 14 16:58:33.338 2023 GMT
+          Extensions: none
+          Signature : ecdsa-with-SHA256
+                30:46:02:21:00:E4:16:AE:D3:E2:2C:BA:82:9F:A9:79:
+                F2:4B:C6:94:52:ED:4D:E0:87:CC:50:CA:69:B1:B4:8F:
+                05:77:3A:94:EB:02:21:00:B5:9F:C3:F9:CB:0F:AD:D0:
+                60:F2:30:1B:71:05:72:12:0D:BD:65:1F:07:A9:9C:53:
+                4B:76:95:12:04:A6:BF:2E
+        Signed Certificate Timestamp:
+          Version   : v1 (0x0)
+          Log ID    : 48:B0:E3:6B:DA:A6:47:34:0F:E5:6A:02:FA:9D:30:EB:
+                1C:52:01:CB:56:DD:2C:81:D9:BB:BF:AB:39:D8:84:73
+          Timestamp : Feb 14 16:58:33.387 2023 GMT
+          Extensions: none
+          Signature : ecdsa-with-SHA256
+                30:45:02:20:1E:3C:60:32:7E:20:51:F5:D6:E1:AF:7D:
+                4D:F5:97:C4:48:2E:46:57:6B:86:05:37:32:4F:25:04:
+                36:B1:F7:B7:02:21:00:FC:09:7E:C0:7C:03:83:26:36:
+                BD:A7:5B:EB:1D:13:59:F6:62:20:8E:6D:6F:B7:0D:31:
+                EB:DB:F5:11:EE:5B:D4
+        Signed Certificate Timestamp:
+          Version   : v1 (0x0)
+          Log ID    : 3B:53:77:75:3E:2D:B9:80:4E:8B:30:5B:06:FE:40:3B:
+                67:D8:4F:C3:F4:C7:BD:00:0D:2D:72:6F:E1:FA:D4:17
+          Timestamp : Feb 14 16:58:33.402 2023 GMT
+          Extensions: none
+          Signature : ecdsa-with-SHA256
+                30:46:02:21:00:CC:E0:6B:F4:E6:74:FB:A3:92:67:21:
+                53:8B:2C:0D:EB:83:F2:B0:DD:05:2D:E2:D1:C8:BE:63:
+                98:4B:18:AC:36:02:21:00:EE:D2:3B:60:5A:23:08:29:
+                4E:82:33:47:4A:72:A5:16:2E:46:85:13:6D:DC:DA:25:
+                80:85:80:07:AA:B1:51:47
+  Signature Algorithm: ecdsa-with-SHA384
+  Signature Value:
+    30:64:02:30:04:dc:0d:d4:de:34:99:0a:9c:1f:a8:e1:c1:76:
+    5c:62:f4:04:a0:29:35:3e:c2:0d:2a:c3:71:6a:b5:f4:37:d4:
+    ec:0b:60:57:71:87:43:25:36:4f:c7:c2:48:d1:49:68:02:30:
+    56:d0:bc:c9:17:10:fb:cd:be:fe:2d:df:42:ba:c6:da:46:db:
+    aa:a6:67:ee:8e:88:84:81:20:85:cc:96:35:a7:b2:26:11:d6:
+    0c:99:9d:3c:c8:83:70:10:4b:0e:15:9b
