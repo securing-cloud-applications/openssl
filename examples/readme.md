@@ -6,7 +6,8 @@ containers clock to allow exploring various scenarios.
 ## Run the container on a specific date
 
 You can bulid the container using the instructios in the root of this repo.
-or you can use the pre-built container at [http://ghcr.io/securing-cloud-applications/openssl:main](http://ghcr.io/securing-cloud-applications/openssl:main)
+or you can use the pre-built container by running 
+`docker pull http://ghcr.io/securing-cloud-applications/openssl:main`
 
 Use the command `docker run -ti --rm --cap-add SYS_TIME openssl bash` 
 to execute the container. `--cap-add SYS_TIME` adds the premission for
