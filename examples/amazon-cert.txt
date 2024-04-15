@@ -1,0 +1,112 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            0e:db:97:39:1c:b5:86:45:18:65:e8:38:f9:f5:29:71
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=US, O=DigiCert Inc, CN=DigiCert Global CA G2
+        Validity
+            Not Before: Feb  2 00:00:00 2024 GMT
+            Not After : Jan  7 23:59:59 2025 GMT
+        Subject: CN=*.peg.a2z.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:cc:4e:c0:0e:cd:d2:b3:56:58:03:30:19:fc:61:
+                    9d:df:44:0d:95:dd:b5:1b:04:da:aa:ab:27:e5:73:
+                    ef:56:86:f1:b1:49:3a:30:9e:bd:c6:6e:19:ae:02:
+                    a3:74:77:51:68:09:0b:00:01:bb:3f:36:4e:a8:4d:
+                    27:ae:6b:e1:a4:d2:bb:d9:13:42:80:e6:4b:37:1d:
+                    c0:20:d3:08:1d:84:a0:dc:60:6a:e7:ec:6d:57:56:
+                    7e:da:59:38:bf:90:55:ed:a4:22:98:87:8b:37:41:
+                    f0:c6:e5:9a:a8:37:a3:f6:d1:f2:f9:29:3f:be:b6:
+                    40:ac:67:cf:d8:d8:c4:1d:a4:63:26:dd:fb:cc:2c:
+                    5f:bb:2f:c2:d0:c9:a2:5f:8a:99:85:49:fc:a0:da:
+                    59:c7:07:e7:7c:5b:69:62:ab:fb:5d:28:ed:4c:70:
+                    e2:3f:63:c4:8c:63:df:13:67:09:e4:34:11:af:ec:
+                    23:43:f9:a4:89:3e:60:e1:77:6a:e6:6a:8b:84:4f:
+                    58:fe:fc:58:6a:33:85:91:8a:b5:2b:06:a8:02:00:
+                    86:e8:df:3b:97:81:bd:8b:a4:37:b1:30:00:bc:8c:
+                    f4:9e:3e:38:6a:ad:0f:48:e9:55:ff:74:b2:0c:5c:
+                    8e:3e:64:ab:a8:3d:0b:53:9b:de:42:d5:15:6a:02:
+                    2f:ab
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Authority Key Identifier: 
+                24:6E:2B:2D:D0:6A:92:51:51:25:69:01:AA:9A:47:A6:89:E7:40:20
+            X509v3 Subject Key Identifier: 
+                B3:AE:61:42:FC:52:B2:33:95:FC:67:0B:E2:23:3E:C7:95:6C:A9:92
+            X509v3 Subject Alternative Name: 
+                DNS:amazon.co.uk, DNS:uedata.amazon.co.uk, DNS:www.amazon.co.uk, DNS:origin-www.amazon.co.uk, DNS:*.peg.a2z.com, DNS:amazon.com, DNS:amzn.com, DNS:uedata.amazon.com, DNS:us.amazon.com, DNS:www.amazon.com, DNS:www.amzn.com, DNS:corporate.amazon.com, DNS:buybox.amazon.com, DNS:iphone.amazon.com, DNS:yp.amazon.com, DNS:home.amazon.com, DNS:origin-www.amazon.com, DNS:origin2-www.amazon.com, DNS:buckeye-retail-website.amazon.com, DNS:huddles.amazon.com, DNS:amazon.de, DNS:www.amazon.de, DNS:origin-www.amazon.de, DNS:amazon.co.jp, DNS:amazon.jp, DNS:www.amazon.jp, DNS:www.amazon.co.jp, DNS:origin-www.amazon.co.jp, DNS:*.aa.peg.a2z.com, DNS:*.ab.peg.a2z.com, DNS:*.ac.peg.a2z.com, DNS:origin-www.amazon.com.au, DNS:www.amazon.com.au, DNS:*.bz.peg.a2z.com, DNS:amazon.com.au, DNS:origin2-www.amazon.co.jp, DNS:edgeflow.aero.4d5ad1d2b-frontier.amazon.co.jp, DNS:edgeflow.aero.04f01a85e-frontier.amazon.com.au, DNS:edgeflow.aero.47cf2c8c9-frontier.amazon.com, DNS:edgeflow.aero.abe2c2f23-frontier.amazon.de, DNS:edgeflow.aero.bfbdc3ca1-frontier.amazon.co.uk, DNS:edgeflow-dp.aero.4d5ad1d2b-frontier.amazon.co.jp, DNS:edgeflow-dp.aero.04f01a85e-frontier.amazon.com.au, DNS:edgeflow-dp.aero.47cf2c8c9-frontier.amazon.com
+            X509v3 Certificate Policies: 
+                Policy: 2.23.140.1.2.1
+                  CPS: http://www.digicert.com/CPS
+            X509v3 Key Usage: critical
+                Digital Signature, Key Encipherment
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication, TLS Web Client Authentication
+            X509v3 CRL Distribution Points: 
+                Full Name:
+                  URI:http://crl3.digicert.com/DigiCertGlobalCAG2.crl
+                Full Name:
+                  URI:http://crl4.digicert.com/DigiCertGlobalCAG2.crl
+            Authority Information Access: 
+                OCSP - URI:http://ocsp.digicert.com
+                CA Issuers - URI:http://cacerts.digicert.com/DigiCertGlobalCAG2.crt
+            X509v3 Basic Constraints: critical
+                CA:FALSE
+            CT Precertificate SCTs: 
+                Signed Certificate Timestamp:
+                    Version   : v1 (0x0)
+                    Log ID    : 4E:75:A3:27:5C:9A:10:C3:38:5B:6C:D4:DF:3F:52:EB:
+                                1D:F0:E0:8E:1B:8D:69:C0:B1:FA:64:B1:62:9A:39:DF
+                    Timestamp : Feb  2 16:14:20.055 2024 GMT
+                    Extensions: none
+                    Signature : ecdsa-with-SHA256
+                                30:46:02:21:00:8E:28:EF:83:0B:F9:44:17:5D:99:C2:
+                                5B:9B:A0:3A:F8:E5:C2:C3:C3:63:39:DA:56:7F:A4:C8:
+                                F9:A8:59:EE:D8:02:21:00:B1:1A:0C:FA:B0:CE:EB:86:
+                                27:F7:F7:97:F4:B3:E8:0A:A1:DB:DF:1D:77:E0:ED:A4:
+                                AB:AA:69:91:1B:82:7B:EE
+                Signed Certificate Timestamp:
+                    Version   : v1 (0x0)
+                    Log ID    : 3F:17:4B:4F:D7:22:47:58:94:1D:65:1C:84:BE:0D:12:
+                                ED:90:37:7F:1F:85:6A:EB:C1:BF:28:85:EC:F8:64:6E
+                    Timestamp : Feb  2 16:14:20.185 2024 GMT
+                    Extensions: none
+                    Signature : ecdsa-with-SHA256
+                                30:44:02:20:3C:F5:8B:87:04:75:67:DC:26:4B:D7:5A:
+                                31:FE:55:62:CD:3B:B7:CF:0D:58:8B:AD:F4:A3:A0:1B:
+                                02:8E:FC:3F:02:20:12:9B:FC:9A:72:F1:0D:46:E7:12:
+                                D9:83:D4:F9:F0:7F:7D:F6:46:80:47:3E:DD:D4:8C:CC:
+                                4C:79:B5:38:88:8D
+                Signed Certificate Timestamp:
+                    Version   : v1 (0x0)
+                    Log ID    : 7D:59:1E:12:E1:78:2A:7B:1C:61:67:7C:5E:FD:F8:D0:
+                                87:5C:14:A0:4E:95:9E:B9:03:2F:D9:0E:8C:2E:79:B8
+                    Timestamp : Feb  2 16:14:20.111 2024 GMT
+                    Extensions: none
+                    Signature : ecdsa-with-SHA256
+                                30:45:02:21:00:93:28:C6:FC:C2:56:18:5F:EB:CA:17:
+                                78:C0:F9:33:03:87:CD:4B:3B:98:00:3A:54:E2:5B:EF:
+                                B3:A2:4F:42:E0:02:20:21:0D:84:E5:0B:8A:EA:DF:1A:
+                                80:1D:DF:1C:FA:CD:E3:A5:09:33:C5:89:97:A3:9D:12:
+                                E9:82:98:0F:39:DA:49
+    Signature Algorithm: sha256WithRSAEncryption
+    Signature Value:
+        84:1d:08:9f:f7:62:28:4c:97:2c:af:1b:36:19:8d:13:e5:86:
+        dc:69:72:1f:fd:95:23:c5:08:46:62:4a:5f:17:13:a6:56:53:
+        dc:65:89:10:df:ec:c2:f5:39:68:1f:dc:7d:29:4f:99:79:05:
+        8c:45:00:f9:29:4c:b9:03:fb:48:1d:a0:bf:e9:6b:8a:c7:2c:
+        da:a0:61:a4:9d:7a:ff:21:8e:47:8c:10:b7:04:28:95:4c:f8:
+        4e:ec:be:70:5f:1c:42:bd:13:59:51:f9:78:d1:32:9f:ed:fe:
+        2c:7f:8a:2a:77:e1:c7:b1:77:37:10:6b:00:b5:10:34:c4:09:
+        5f:fb:75:cb:57:4d:f0:1e:27:b1:e5:42:64:12:0b:09:ea:b3:
+        83:dd:42:ab:4a:82:88:0b:9e:5b:2a:ce:6a:a6:49:94:74:59:
+        5a:fc:67:7d:2f:59:9f:a3:1e:6b:77:6d:12:67:66:80:de:09:
+        d8:d8:20:92:b6:44:f8:54:1f:4a:75:b9:d1:11:98:75:6d:66:
+        ed:d7:b6:33:99:d6:2a:e3:8f:f6:e3:61:40:59:46:f9:c7:c6:
+        af:e4:4d:b5:87:01:81:1a:52:c9:8e:6a:16:84:2a:4c:4c:31:
+        d9:e7:8e:3f:2a:0e:76:3a:9d:64:8c:32:16:a9:5c:b7:fd:dd:
+        bd:53:0d:ef
