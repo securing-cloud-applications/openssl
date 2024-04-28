@@ -78,3 +78,10 @@ C = US, ST = California, L = San Francisco, O = "GitHub, Inc.", CN = github.com
 error 10 at 0 depth lookup: certificate has expired
 error github-cert.pem: verification failed
 ```
+
+# Amazon certificate examples
+
+The amazon certificate uses RSA public key you can use the commands above to inspect
+it the file is called `amazon-cert.pem` 
+
+
